@@ -1,6 +1,7 @@
 /* TODO: Give the site header a nice background color, from your selected color scheme. */
 
 .site-header {
+  background-color: darkblue;
   padding: .1em;
 }
 
@@ -21,6 +22,7 @@
     Use the full width, and remove the list bullet. */
 
 #filters {
+  width: 100%;
   padding: 0;
 }
 

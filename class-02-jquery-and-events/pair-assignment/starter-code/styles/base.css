@@ -2,6 +2,7 @@
          Use an accent color for all links, and remove their underline. */
 
 body {
+  background-color: lightblue;
   line-height: 1.5;
   font-size: 100%;
   color: #313131;
@@ -26,6 +27,7 @@ address {
 =======================================*/
 
 a, a:link, a:active {
+  text-decoration: none;
   color: #777;
 }
 
