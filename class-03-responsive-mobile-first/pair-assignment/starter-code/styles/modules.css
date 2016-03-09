@@ -66,14 +66,17 @@
     display: flex;
   }
   .main-nav li{
-    display: inline-flex;
-    width: 25%;
+    display: block;
+    width: 100%;
   }
 }
-@media only screen and (min-width: 768px) {
-
+@media only screen and (min-width: 360px) {
+.main-nav li{
+  display: block;
+  width: 100%;
 }
-/* TODO: Now add styles for how things should look on a larger screen:
+}
+/* DONE: Now add styles for how things should look on a larger screen:
          - Hide the hamburger.
          - Main should be all on one row, with padding spaced better for a larger screen.
          - Just, ya know, try to make it look good! */
