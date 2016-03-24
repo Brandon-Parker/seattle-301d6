@@ -23,18 +23,28 @@
       a function that has 3 arguments (field, value, callback) and then running a webDB SQL command
       that will select everything from the Articles table where the "field" element that we defined as
       "id" and it is being set equal to that instance (data: [value]) and being saved into the ctx.params.id
-      and then it runs the callback "next()". 
+      and then it runs the callback "next()".
     */
     Article.findWhere('id', ctx.params.id, articleData);
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
+  /* Creating a new method called loadByAuthor on the articlesController module and passing in two parameters
+    of the context object and the "next" callback. Next it creates a new variable of authorData and creating
+    another function that has a parameter of articlesByAuthor. Next we are setting the property of articles
+    and setting equal to articlesByAuthor and then calling the "next" callback.
+  */
   articlesController.loadByAuthor = function(ctx, next) {
     var authorData = function(articlesByAuthor) {
       ctx.articles = articlesByAuthor;
       next();
     };
-
+    /*Next we are calling the findWhere method and passing in the three required arguments of 'author' as the
+    "field" element, the value as the ctx.params element and the callback as authorData. Then it runs the
+    webDB execute method  which uses SQL to select everything from the articles table where the "field"(author),
+    element is equal to the ctx object just below and replacing the concatenation with a blank space and then
+    running the "next" callback funtion we are calling authorData.
+    */
     Article.findWhere('author', ctx.params.authorName.replace('+', ' '), authorData);
   };
 
