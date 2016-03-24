@@ -133,7 +133,8 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
-  //
+  /*We are creating the index method on articleView with an anonymous function with a parameter of articles. We are then showing all ids of articles and hiding any siblings. Then we are using the remove method on any article within the id of articles. Then we are calling a forEach method on the articles when running a function and passing in a parameter of a that then queries the dom for any id of articles and appends our render varible which is equal to a function. This function has a paramater of article and then creates a new template which calls the Handlebars compile method on an id of article-template. Then we are creating a daysAgo property on the article which is subtracting the current date from the publishedDate. We are then creating a publishedStatus property on the article which is taking the math that was done on the daysAgo property and then setting it equal to the publsihed date was published x amount of days ago. Then we are using marked.js to mark up the body and then returning the template. 
+  */
   articleView.index = function(articles) {
     $('#articles').show().siblings().hide();
 
@@ -144,7 +145,10 @@
 
     articleView.populateFilters();
     // COMMENT: What does this method do?  What is it's execution path?
-    //
+    /*We are calling the handlefilters method on articleView. Which is Creating the handleFilters method on the articleView object and creating an anonymous function
+  which queries the dom for the Id of filters and on a single change event, it changes the select the element and creates a new function
+  that changes the '-filter' into a blank string. and then replaces any/all whitespace with a + 
+  */
     articleView.handleFilters();
 
     // DONE: Replace setTeasers with just the truncation logic, if needed:
